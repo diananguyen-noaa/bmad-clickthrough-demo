@@ -1,0 +1,718 @@
+.bmad-demo-shell {
+  width: min(100%, 1240px);
+  margin: 0 auto;
+  padding: 24px 18px 48px;
+  color: #152226;
+}
+
+.bmad-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 410px);
+  align-items: end;
+  gap: 20px;
+  margin-bottom: 18px;
+}
+
+.bmad-intro h1 {
+  max-width: 800px;
+  margin: 0 0 12px;
+  color: #083344;
+  font-size: clamp(3rem, 8vw, 6.2rem);
+  line-height: 0.95;
+}
+
+.bmad-intro p {
+  max-width: 690px;
+  margin: 0;
+  color: #526367;
+  line-height: 1.55;
+}
+
+.bmad-kicker {
+  margin: 0 0 8px;
+  color: #1f7a8c;
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.bmad-track-panel {
+  display: grid;
+  gap: 10px;
+  padding: 14px;
+  border: 1px solid #d5e0de;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 16px 34px rgba(15, 54, 66, 0.11);
+}
+
+.bmad-track-panel > span,
+.bmad-downloads span,
+.bmad-stack-header span,
+.bmad-progress span,
+.bmad-scenario span,
+.bmad-help-panel span,
+.bmad-preview-header span {
+  color: #66777b;
+  font-size: 0.75rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.bmad-track-panel p {
+  margin: 0;
+  color: #304145;
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+.bmad-track-options {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 6px;
+}
+
+.bmad-track-options button {
+  min-height: 38px;
+  padding: 0 8px;
+  border: 1px solid #c6d6d3;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #304145;
+  font-size: 0.82rem;
+  font-weight: 900;
+}
+
+.bmad-track-options button.selected {
+  border-color: #1f7a8c;
+  background: #1f7a8c;
+  color: #ffffff;
+}
+
+.bmad-workspace {
+  display: grid;
+  grid-template-columns: 250px minmax(0, 1fr) 250px;
+  gap: 14px;
+  align-items: start;
+}
+
+.bmad-timeline,
+.bmad-phase-detail,
+.bmad-artifact-stack {
+  border: 1px solid #d5e0de;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.97);
+  box-shadow: 0 18px 40px rgba(15, 54, 66, 0.1);
+}
+
+.bmad-timeline {
+  position: sticky;
+  top: 14px;
+  grid-column: 1;
+  grid-row: 1;
+  display: grid;
+  gap: 8px;
+  padding: 10px;
+}
+
+.bmad-progress {
+  display: grid;
+  gap: 8px;
+  padding: 10px;
+}
+
+.bmad-progress strong {
+  color: #083344;
+  font-size: 1.35rem;
+}
+
+.bmad-progress div {
+  overflow: hidden;
+  height: 8px;
+  border-radius: 999px;
+  background: #e5ecea;
+}
+
+.bmad-progress i {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #1f7a8c, #2f9e44);
+}
+
+.bmad-phase-button {
+  position: relative;
+  display: grid;
+  gap: 5px;
+  min-height: 82px;
+  padding: 12px 12px 12px 16px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background: #f7faf9;
+  color: #304145;
+  text-align: left;
+}
+
+.bmad-phase-button::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 12px;
+  bottom: 12px;
+  width: 4px;
+  border-radius: 999px;
+  background: #c6d6d3;
+}
+
+.bmad-phase-button span,
+.bmad-phase-button em {
+  color: #66777b;
+  font-size: 0.74rem;
+  font-style: normal;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.bmad-phase-button strong {
+  color: #162022;
+  font-size: 0.98rem;
+  line-height: 1.15;
+}
+
+.bmad-phase-button.active {
+  border-color: #1f7a8c;
+  background: #eef8fa;
+}
+
+.bmad-phase-button.active::before {
+  background: #1f7a8c;
+}
+
+.bmad-phase-button.complete::before {
+  background: #2f9e44;
+}
+
+.bmad-phase-detail {
+  grid-column: 2;
+  grid-row: 1;
+  min-width: 0;
+  padding: 20px;
+}
+
+.bmad-phase-heading {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+
+.bmad-phase-heading h2 {
+  margin: 0;
+  color: #083344;
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  line-height: 1;
+}
+
+.bmad-phase-badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 6px;
+}
+
+.bmad-phase-badges span {
+  min-height: 32px;
+  display: inline-grid;
+  place-items: center;
+  padding: 0 10px;
+  border-radius: 999px;
+  background: #fff3d8;
+  color: #8a5a00;
+  font-size: 0.78rem;
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+.bmad-phase-badges .agent {
+  display: inline-flex;
+  gap: 6px;
+  background: #f5f1ff;
+  color: #6652a3;
+}
+
+.bmad-agent-icon {
+  font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.bmad-phase-purpose {
+  margin: 0 0 16px;
+  color: #526367;
+  line-height: 1.55;
+}
+
+.bmad-scenario,
+.bmad-help-panel {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 14px;
+  padding: 14px;
+  border: 1px solid #d5e0de;
+  border-radius: 8px;
+  background: #f7faf9;
+}
+
+.bmad-scenario {
+  border-left: 4px solid #1f7a8c;
+}
+
+.bmad-scenario p,
+.bmad-help-panel p {
+  margin: 0;
+  color: #1e2b2f;
+  line-height: 1.48;
+}
+
+.bmad-scenario .bmad-workflow-summary {
+  padding-top: 8px;
+  border-top: 1px solid #d5e0de;
+  color: #526367;
+  font-size: 0.92rem;
+}
+
+.bmad-phase-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.bmad-list-panel {
+  min-width: 0;
+  padding: 14px;
+  border: 1px solid #d5e0de;
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.bmad-list-panel.inputs {
+  border-color: #b9d9f2;
+  background: #eef7ff;
+}
+
+.bmad-list-panel.workflows {
+  border-color: #efd29a;
+  background: #fff7e8;
+}
+
+.bmad-list-panel.outputs {
+  border-color: #b8dfc1;
+  background: #eefaf1;
+}
+
+.bmad-list-panel h3 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 10px;
+  color: #083344;
+  font-size: 0.94rem;
+}
+
+.bmad-list-icon {
+  display: inline-grid;
+  width: 26px;
+  height: 26px;
+  flex: 0 0 26px;
+  place-items: center;
+  border: 1px solid #d5e0de;
+  border-radius: 8px;
+  background: #f7faf9;
+  font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.bmad-list-panel.inputs .bmad-list-icon {
+  border-color: #b9d9f2;
+  background: #ffffff;
+}
+
+.bmad-list-panel.workflows .bmad-list-icon {
+  border-color: #efd29a;
+  background: #ffffff;
+}
+
+.bmad-list-panel.outputs .bmad-list-icon {
+  border-color: #b8dfc1;
+  background: #ffffff;
+}
+
+.bmad-list-panel ul {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.bmad-list-panel li {
+  padding: 8px 10px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  color: #526367;
+  font-size: 0.9rem;
+  line-height: 1.35;
+}
+
+.bmad-list-panel.inputs li {
+  border-color: #c7dded;
+  background: #dceeff;
+}
+
+.bmad-list-panel.workflows li {
+  border-color: #e6cc96;
+  background: #ffedc9;
+}
+
+.bmad-list-panel.outputs li {
+  border-color: #b6d8bf;
+  background: #d9f3de;
+}
+
+.bmad-list-panel code {
+  display: inline-block;
+  max-width: 100%;
+  padding: 2px 0;
+  border-radius: 6px;
+  background: transparent;
+  color: #6d4d0f;
+  font-size: 0.84rem;
+  white-space: normal;
+}
+
+.bmad-artifact-preview {
+  overflow: hidden;
+  margin-bottom: 14px;
+  border: 1px solid #c6d6d3;
+  border-radius: 8px;
+  background: #0f1e24;
+}
+
+.bmad-artifact-preview summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  cursor: pointer;
+  list-style: none;
+}
+
+.bmad-artifact-preview summary::-webkit-details-marker {
+  display: none;
+}
+
+.bmad-artifact-preview summary::after {
+  content: "Open";
+  min-height: 30px;
+  display: inline-grid;
+  place-items: center;
+  padding: 0 10px;
+  border: 1px solid #75c7d6;
+  border-radius: 8px;
+  color: #d8f8ff;
+  font-size: 0.82rem;
+  font-weight: 900;
+}
+
+.bmad-artifact-preview[open] summary::after {
+  content: "Close";
+}
+
+.bmad-artifact-preview summary div {
+  min-width: 0;
+  display: grid;
+  gap: 4px;
+}
+
+.bmad-artifact-preview summary span {
+  color: #9fb5b9;
+}
+
+.bmad-artifact-preview summary strong {
+  overflow-wrap: anywhere;
+  color: #ffffff;
+  font-size: 0.94rem;
+}
+
+.bmad-preview-actions {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 12px 0;
+}
+
+.bmad-preview-actions button {
+  min-height: 32px;
+  padding: 0 10px;
+  border: 1px solid #75c7d6;
+  border-radius: 8px;
+  background: transparent;
+  color: #d8f8ff;
+  font-weight: 900;
+}
+
+.bmad-artifact-preview pre {
+  overflow: auto;
+  max-height: 260px;
+  margin: 0;
+  padding: 16px;
+  color: #e7f5f5;
+  font-size: 0.86rem;
+  line-height: 1.55;
+  white-space: pre-wrap;
+}
+
+.bmad-downloads {
+  display: grid;
+  gap: 12px;
+}
+
+.bmad-downloads > div:first-child,
+.bmad-stack-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.bmad-downloads strong,
+.bmad-stack-header strong {
+  color: #083344;
+  font-size: 0.96rem;
+}
+
+.bmad-download-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 8px;
+}
+
+.bmad-download-list button,
+.bmad-stack-list button {
+  min-width: 0;
+  display: grid;
+  gap: 5px;
+  padding: 12px;
+  border: 1px solid #c6d6d3;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #304145;
+  text-align: left;
+}
+
+.bmad-stack-list button {
+  padding: 10px;
+}
+
+.bmad-download-list button:hover,
+.bmad-download-list button.selected,
+.bmad-stack-list button:hover {
+  border-color: #1f7a8c;
+  background: #f3fbfc;
+}
+
+.bmad-download-list button span,
+.bmad-stack-list button span {
+  color: #2f9e44;
+  font-size: 0.72rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.bmad-download-list button strong,
+.bmad-stack-list button strong {
+  overflow-wrap: anywhere;
+  color: #083344;
+  font-size: 0.92rem;
+  line-height: 1.2;
+}
+
+.bmad-stack-list button strong {
+  font-size: 0.86rem;
+}
+
+.bmad-download-list button em {
+  color: #66777b;
+  font-size: 0.82rem;
+  font-style: normal;
+  line-height: 1.3;
+}
+
+.bmad-artifact-stack {
+  position: sticky;
+  top: 14px;
+  grid-column: 3;
+  grid-row: 1 / span 2;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  gap: 10px;
+  height: calc(100vh - 28px);
+  min-height: 360px;
+  padding: 14px;
+  background: #f5f7f8;
+}
+
+.bmad-stack-list {
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  display: grid;
+  align-content: start;
+  gap: 8px;
+  padding-right: 2px;
+}
+
+.bmad-stack-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.bmad-stack-list::-webkit-scrollbar-track {
+  background: #e6ecef;
+  border-radius: 999px;
+}
+
+.bmad-stack-list::-webkit-scrollbar-thumb {
+  background: #b8c8ce;
+  border-radius: 999px;
+}
+
+.bmad-stack-list button span {
+  color: #b7791f;
+}
+
+.bmad-controls-sentinel {
+  width: 100%;
+  height: 1px;
+}
+
+.bmad-controls-wrap {
+  grid-column: 2;
+  grid-row: 2;
+  display: grid;
+  justify-items: center;
+  min-width: 0;
+}
+
+.bmad-demo-controls {
+  width: min(100%, 520px);
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  margin: 12px auto 0;
+  padding: 10px;
+  border: 1px solid #c6d6d3;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 18px 44px rgba(8, 51, 68, 0.18);
+  backdrop-filter: blur(14px);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition:
+    opacity 180ms ease,
+    transform 180ms ease;
+}
+
+.bmad-demo-controls.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.bmad-demo-controls button {
+  min-height: 42px;
+  padding: 0 10px;
+  border: 1px solid #c6d6d3;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #083344;
+  font-size: 0.9rem;
+  font-weight: 900;
+}
+
+.bmad-demo-controls button.primary {
+  border-color: #1f7a8c;
+  background: #1f7a8c;
+  color: #ffffff;
+}
+
+.bmad-demo-controls button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+@media (max-width: 1080px) {
+  .bmad-intro,
+  .bmad-workspace {
+    grid-template-columns: 1fr;
+  }
+
+  .bmad-timeline,
+  .bmad-artifact-stack {
+    position: static;
+    height: auto;
+    min-height: 0;
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .bmad-phase-detail,
+  .bmad-controls-wrap {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .bmad-timeline {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .bmad-progress {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 760px) {
+  .bmad-demo-shell {
+    padding: 18px 12px 48px;
+  }
+
+  .bmad-intro h1 {
+    font-size: clamp(2.8rem, 16vw, 4rem);
+  }
+
+  .bmad-phase-grid,
+  .bmad-timeline,
+  .bmad-track-options,
+  .bmad-demo-controls {
+    grid-template-columns: 1fr;
+  }
+
+  .bmad-phase-heading,
+  .bmad-artifact-preview summary {
+    display: grid;
+  }
+
+  .bmad-phase-badges,
+  .bmad-artifact-preview summary::after {
+    justify-self: start;
+  }
+
+  .bmad-phase-badges {
+    justify-content: flex-start;
+  }
+}
